@@ -1,6 +1,6 @@
 # Matematica delle scuole superiori
 
-Questa repository contiene appuntu su diversi argomenti di matematica studiati nelle scuole superiori italian. I loro programmi sono molto simili, e le differenze dipendono dal "rigore della scuola", il che rende perfetti per un'esposizione uniforme, rendendo questi appunti utili potenzialmente per ogni studente.
+Questa repository contiene appunti su diversi argomenti di matematica studiati nelle scuole superiori italian. I loro programmi sono molto simili, e le differenze dipendono dal "rigore della scuola", il che rende perfetti per un'esposizione uniforme, rendendo questi appunti utili potenzialmente per ogni studente.
 
 Al momento in cui scrivo (2020/02/11) gli appunti sono suddivisi in argomenti. Ogni argomento include sia la parte teorica, che esempi ed esercizi. In particolare, nella parte teorica si cercherà di essere il giusto connubio tra formale e informale, facendo leva quanto più possibile sull'intuizione geometrica.
 
