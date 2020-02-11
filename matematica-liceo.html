@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-02-11 Tue 06:45 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Enrico Sintoni" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<div style="display: none"> \(
+% \usepackage[d]{esvect}
+% \usepackage{amsmath}
+% \usepackage{kpfonts}
+% \usepackage{graphicx}
+% \newcommand*{\vv}[1]{\vec{\mkern0mu#1}}
+\newcommand{\vv}[1]{\overrightarrow{#1}}
+\newcommand{\norm}[1]{\left|#1\right|} % Norm |x|
+\newcommand{\NN}{\mathbb{N}} % Natural numbers
+\newcommand{\ZZ}{\mathbb{Z}} % Integers
+\newcommand{\QQ}{\mathbb{Q}} % Rational numbers
+\newcommand{\RR}{\mathbb{R}} % Real numbers
+\newcommand{\CC}{\mathbb{C}} % Complex numbers
+\)</div>
+<div style="display: none"> \(
+% \usepackage[d]{esvect}
+\usepackage{amsmath}
+\usepackage{kpfonts}
+\usepackage{graphicx}
+\newcommand*{\vv}[1]{\vec{\mkern0mu#1}}
+\newcommand{\norm}[1]{\left|#1\right|} % Norm |x|
+\newcommand{\NN}{\mathbb{N}} % Natural numbers
+\newcommand{\ZZ}{\mathbb{Z}} % Integers
+\newcommand{\QQ}{\mathbb{Q}} % Rational numbers
+\newcommand{\RR}{\mathbb{R}} % Real numbers
+\newcommand{\CC}{\mathbb{C}} % Complex numbers
+\)</div>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org390fd73">1. Preambolo</a></li>
+<li><a href="#org22705da">2. Ometetie</a>
+<ul>
+<li><a href="#org853a8ec">2.1. Formule per \(P'\)</a></li>
+<li><a href="#orgf9d4c42">2.2. Omotetia inversa</a></li>
+<li><a href="#org8af07ca">2.3. Quando c'è un'omotetia che manda un punto \(P\) in un punto \(P'\)?</a></li>
+<li><a href="#orgfd5cb69">2.4. Quando c'è un'omotetia di centro fissato che manda un punto \(P\) in un punto \(P'\)?</a></li>
+</ul>
+</li>
+<li><a href="#orgf4ca9ce">3. Dilatazioni</a>
+<ul>
+<li><a href="#org74fd0ea">3.1. Dilatazione inversa</a></li>
+<li><a href="#org356984e">3.2. Quando c'è una dilatazione che manda un punto \(P\) in un punto \(P'\)?</a></li>
+<li><a href="#org3b04d7b">3.3. Quando c'è un'omotetia di centro fissato che manda un punto \(P\) in un punto \(P'\)?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org390fd73" class="outline-2">
+<h2 id="org390fd73"><span class="section-number-2">1</span> Preambolo</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+</div>
+
+<div id="outline-container-org22705da" class="outline-2">
+<h2 id="org22705da"><span class="section-number-2">2</span> Ometetie</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Una <b>omotetia</b> di centro \(C\) e costante \(K \neq 0\) è una funzione che manda ogni
+punto \(P\) nel punto \(P'\) tale per cui vale
+</p>
+
+<p>
+\[
+\vv{CP'} = K \cdot \vv{CP}
+\]
+</p>
+
+<p>
+cioè il vettore da \(C\) a \(P'\) si ottiene moltiplicando il vettore da \(C\) a \(P\)
+per la costante \(K\).
+</p>
+</div>
+
+<div id="outline-container-org853a8ec" class="outline-3">
+<h3 id="org853a8ec"><span class="section-number-3">2.1</span> Formule per \(P'\)</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Possiamo ottenere le formule per le coordinate \(P' = (x', y')\) conoscendo quelle
+di \(C = (x_C, y_C)\) e di \(P = (x, y)\).
+</p>
+
+<p>
+Prima di tutto, sappiamo che il vettore \(\vv{CP}\) è rappresentato in coordinate
+come
+</p>
+
+<p>
+\[
+\vv{CP} = P - C = (x - x_C,\, y - y_C)
+\]
+</p>
+
+<p>
+mentre il vettore \(\vv{CP'}\) è rappresentato in coordinate come
+</p>
+
+<p>
+\[
+\vv{CP'} = P' - C = (x' - x_C,\, y' - y_C)
+\]
+</p>
+
+<p>
+Dunqunque l'uguaglianza \(\vv{CP'} = K \cdot \vv{CP}\) diventa proprio
+</p>
+
+<p>
+\[
+(x' - x_C,\, y' - y_C)
+= K \cdot (x - x_C,\, y - y_C)
+\]
+</p>
+
+<p>
+dove a secondo membro la moltiplicazione di \(K\) per il punto significa che
+stiamo moltiplicando per \(K\) entrambe le coordinate. Quindi l'uguaglianza che
+otteniamo è
+</p>
+
+<p>
+\[
+(x' - x_C,\, y' - y_C)
+= ( K (x - x_C),\, K (y - y_C) ).
+\]
+</p>
+
+<p>
+e ciò significa che questi due punti devono essere lo stesso punto. Ora possiamo
+ricordarci che due punti sono uguali precisamente quando hanno le stesse
+coordinate, cioè le coordinate \(x\) sono uguali in entrambi i punti, cioè
+</p>
+
+<p>
+\[
+x' - x_C = K (x - x_C)
+\]
+</p>
+
+<p>
+e le coordinate \(y\) sono uguali in entrambi i punti, cioè
+</p>
+
+<p>
+\[
+y' - y_C = K (y - y_C)
+\]
+</p>
+
+<p>
+Mettendole assieme, otteniamo il sistema
+</p>
+
+<p>
+\[
+\left\{
+{\begin{array}{l}
+ x' - x_C = K (x - x_C) \\
+ y' - y_C = K (y - y_C)
+ \end{array}}
+\right.
+\]
+</p>
+
+<p>
+e portando a destra \(x_C\) nella prima equazone, e \(y_C\) nella seconda, otteniamo
+infine
+</p>
+
+<p>
+\[
+\left\{
+{\begin{array}{l}
+ x' = K (x - x_C) + x_C \\
+ y' = K (y - y_C) + y_C
+ \end{array}}
+\right.
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf9d4c42" class="outline-3">
+<h3 id="orgf9d4c42"><span class="section-number-3">2.2</span> Omotetia inversa</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Dalle formule per l'omotetia, possiamo ricavare l'omotetia inversa isolando \(x\)
+e \(y\). Partiamo da
+</p>
+
+<p>
+\[
+\left\{
+{\begin{array}{l}
+ x' = K (x - x_C) + x_C \\
+ y' = K (y - y_C) + y_C
+ \end{array}}
+\right.
+\]
+</p>
+
+<p>
+in entrambe le quazioni facciamo prima i calcoli a secondo membro per scriverle
+come
+</p>
+
+<p>
+\[
+\left\{
+{\begin{array}{l}
+ x' = K x + x_C (1 - K) \\
+ y' = K y + y_C (1 - K)
+ \end{array}}
+\right.
+\]
+</p>
+
+<p>
+poi portiamo a destra \(Kx\) e \(Ky\), portiamo a sinistra \(x'\) e \(y'\)
+</p>
+
+<p>
+\[
+\left\{
+{\begin{array}{l}
+ -K x = -x' + x_C (1 - K) \\
+ -K y = -y' + y_C (1 - K)
+ \end{array}}
+\right.
+\]
+</p>
+
+<p>
+e infine dividiamo entrambi i membri per \(-K\) in modo da ottenere
+</p>
+
+<p>
+\[
+\left\{
+{\begin{array}{l}
+ x = \frac{1}{K} x' + x_C \frac{K - 1}{K} \\
+ y = \frac{1}{K} y' + y_C \frac{K - 1}{K}
+ \end{array}}
+\right.
+\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8af07ca" class="outline-3">
+<h3 id="org8af07ca"><span class="section-number-3">2.3</span> Quando c'è un'omotetia che manda un punto \(P\) in un punto \(P'\)?</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+In generale, per qualsiasi scelta facciamo per \(P\) e \(P'\), possiamo sempre
+trovare un centro \(C = (x_C, y_C)\) e una costante \(K\) affinché il punto \(P = (x,
+y)\) venga mandato in \(P' = (x', y')\).
+</p>
+
+<p>
+Ma come calcoliamo \(C\) e \(K\)? Per prima cosa, occorre separare due casi.
+</p>
+
+<ol class="org-ol">
+<li>Se \(P\) e \(P'\) sono lo stesso punto, allora ci sono infinite omotetie, e sono
+tutte di centro \(P\) e costante \(K\) a piacere. Sono infinite proprio perché
+possiamo scegliere tra infinite \(K\) e vanno tutte bene.</li>
+
+<li><p>
+Se invece \(P\) e \(P'\) sono diversi, allora sono di nuovo infinite, infatti per
+qualsiasi punto \(C\) diverso da entrambi \(P\) e \(P'\) contenuto nella retta
+\(PP'\), possiamo considerare
+</p>
+
+<p>
+\[
+   K = \pm \frac{ \overline{CP'} }{ \overline{CP} }
+   \]
+</p>
+
+<p>
+in cui mettiamo + se \(C\) sta in mezzo a \(P\) e \(P'\), mentre - se \(C\) non sta
+in mezzo.
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgfd5cb69" class="outline-3">
+<h3 id="orgfd5cb69"><span class="section-number-3">2.4</span> Quando c'è un'omotetia di centro fissato che manda un punto \(P\) in un punto \(P'\)?</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Supponiamo che ci sia dato un centro \(C = (x_C, y_C)\), allora una omotetia che
+manda \(P\) in \(P'\) esiste soltanto in alcuni casi:
+</p>
+
+<ol class="org-ol">
+<li>Se \(P\) e \(P'\) sono uguali e coincidono proprio con \(C\).</li>
+
+<li><p>
+Se \(C\) è diverso da entrambi \(P\) e \(P'\) ma è contenuto nella retta \(PP'\), e
+in tal caso si prende come coefficiente
+</p>
+
+<p>
+\[
+   K = \pm \frac{ \overline{CP'} }{ \overline{CP} }
+   \]
+</p>
+
+<p>
+in cui mettiamo \(-\) se \(C\) sta in mezzo a \(P\) e \(P'\), mentre \(+\) se \(C\) non
+sta in mezzo.
+</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf4ca9ce" class="outline-2">
+<h2 id="orgf4ca9ce"><span class="section-number-2">3</span> Dilatazioni</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Abbiamo visto che per le omotetie di centro \(C = (x_C, y_C)\) e costante \(K\) si
+hanno le formule seguenti per determinare le coordinate del punto \(P' = (x',
+y')\) in cui viene mandato il punto \(P = (x, y)\)
+</p>
+
+<p>
+\[
+\left\{
+{\begin{array}{l}
+ x' = K (x - x_C) + x_C \\
+ y' = K (y - y_C) + y_C
+ \end{array}}
+\right.
+\]
+</p>
+
+<p>
+Le <b>dilatazioni</b> sono una sorta di generalizzazione delle omotetie, in cui
+abbiamo ancora un centro \(C = (x_C, y_C)\), ma non c'è solo un \(K\) come costante,
+bensì ce ne sono due: \(K\) e \(H\) (entrambe \(\neq 0\)), che compaiono nelle formule
+</p>
+
+<p>
+\[
+\left\{
+{\begin{array}{l}
+ x' = K (x - x_C) + x_C \\
+ y' = H (y - y_C) + y_C
+ \end{array}}
+\right.
+\]
+</p>
+
+<p>
+Qui si intende che \(P = (x, y)\) viene mandato nel punto \(P' = (x', y')\).
+</p>
+
+<p>
+Nota bene che tutte le omotetie sono dilatazioni, ma in generale non è vero il
+viceversa: non tutte le dilatazioni sono omotetie.
+</p>
+</div>
+
+<div id="outline-container-org74fd0ea" class="outline-3">
+<h3 id="org74fd0ea"><span class="section-number-3">3.1</span> Dilatazione inversa</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Dalle formule per le dilatazioni, possiamo ricavare la dilatazione inversa
+isolando \(x\) e \(y\). Partiamo da
+</p>
+
+<p>
+\[
+\left\{
+{\begin{array}{l}
+ x' = K (x - x_C) + x_C \\
+ y' = H (y - y_C) + y_C
+ \end{array}}
+\right.
+\]
+</p>
+
+<p>
+in entrambe le quazioni facciamo prima i calcoli a secondo membro per scriverle
+come
+</p>
+
+<p>
+\[
+\left\{
+{\begin{array}{l}
+ x' = K x + x_C (1 - K) \\
+ y' = H y + y_C (1 - H)
+ \end{array}}
+\right.
+\]
+</p>
+
+<p>
+poi portiamo a destra \(Kx\) e \(Hy\), portiamo a sinistra \(x'\) e \(y'\)
+</p>
+
+<p>
+\[
+\left\{
+{\begin{array}{l}
+ -K x = -x' + x_C (1 - K) \\
+ -H y = -y' + y_C (1 - H)
+ \end{array}}
+\right.
+\]
+</p>
+
+<p>
+e infine dividiamo entrambi i membri della prima equazione per \(-K\), e della
+seconda equazione per \(-H\), in modo da ottenere
+</p>
+
+<p>
+\[
+\left\{
+{\begin{array}{l}
+ x = \frac{1}{K} x' + x_C \frac{K - 1}{K} \\
+ y = \frac{1}{H} y' + y_C \frac{H - 1}{H}
+ \end{array}}
+\right.
+\]
+</p>
+</div>
+</div>
+<div id="outline-container-org356984e" class="outline-3">
+<h3 id="org356984e"><span class="section-number-3">3.2</span> Quando c'è una dilatazione che manda un punto \(P\) in un punto \(P'\)?</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+In generale, per qualsiasi scelta facciamo per \(P\) e \(P'\), possiamo sempre
+trovare un centro \(C = (x_C, y_C)\) e due costanti \(K\) e \(H\) affinché il punto \(P
+= (x, y)\) venga mandato in \(P' = (x', y')\).
+</p>
+
+<p>
+Ma come calcoliamo \(C\) e le costanti \(K\), \(H\)? Per prima cosa, occorre separare
+due casi.
+</p>
+
+<ol class="org-ol">
+<li>Se \(P\) e \(P'\) sono lo stesso punto, allora ci sono infinite dilatazioni, e
+sono tutte di centro \(P\) e costanti \(K\), \(H\) a piacere. Sono infinite proprio
+perché possiamo scegliere tra infinite \(K\) e \(H\), e vanno tutte bene.</li>
+
+<li><p>
+Se invece \(P\) e \(P'\) sono diversi, allora sono di nuovo infinite, infatti per
+qualsiasi punto \(C\) diverso da entrambi \(P\) e \(P'\) (qualsiasi!), possiamo
+considerare
+</p>
+
+<p>
+\[
+   K = \pm \frac{ \norm{x' - x_C} }{ \norm{x - x_C} },
+   \qquad
+   H = \pm \frac{ \norm{y' - y_C} }{ \norm{y - y_C} },
+   \]
+</p>
+
+<p>
+in cui mettiamo \(-\) se \(x_C\) (rispettivamente \(y_C\)) e sta in mezzo a \(x\) e
+\(x'\) (rispettivamente \(y\) e \(y'\)), mentre mettiamo \(+\) se \(x_C\)
+(rispettivamente \(y_C\)) non sta in mezzo.
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org3b04d7b" class="outline-3">
+<h3 id="org3b04d7b"><span class="section-number-3">3.3</span> Quando c'è un'omotetia di centro fissato che manda un punto \(P\) in un punto \(P'\)?</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Supponiamo che ci sia dato un centro \(C = (x_C, y_C)\), allora una dilatazione
+che manda \(P\) in \(P'\) esiste soltanto in alcuni casi:
+</p>
+
+<ol class="org-ol">
+<li>Se \(P\) e \(P'\) sono uguali e coincidono proprio con \(C\).</li>
+
+<li><p>
+Se \(C\) è diverso da entrambi \(P\) e \(P'\), e in tal caso prendiamo come
+coefficienti
+</p>
+
+<p>
+\[
+   K = \pm \frac{ \norm{x' - x_C} }{ \norm{x - x_C} },
+   \qquad
+   H = \pm \frac{ \norm{y' - y_C} }{ \norm{y - y_C} },
+   \]
+</p>
+
+<p>
+in cui mettiamo \(-\) se \(x_C\) (rispettivamente \(y_C\)) e sta in mezzo a \(x\) e
+\(x'\) (rispettivamente \(y\) e \(y'\)), mentre mettiamo \(+\) se \(x_C\)
+(rispettivamente \(y_C\)) non sta in mezzo.
+</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Enrico Sintoni</p>
+<p class="date">Created: 2020-02-11 Tue 06:45</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
