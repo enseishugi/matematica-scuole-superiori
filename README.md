@@ -7,3 +7,6 @@ Al momento in cui scrivo (2020/02/11) gli appunti sono suddivisi in argomenti. O
 Un altro aspetto su cui cercherò di porre attenzione è il dare un significato al "matematichese". Spesso viene letto come una lingua aliena con le sue strane regole sintattiche, quando è in realtà una lingua che esprime concetti molto precisi e già noti agli studenti. Tuttavia, come ogni lingua, va spiegata, soprattutto in virtù della sua struttura "innaturale" (non è una lingua naturale) e "naturale" (si avvicina in modo impressionante a come ragioniamo) al tempo stesso. 
 
 Non mancheranno anche link ad altri siti/altre fonti che ritengo ottimi/e per la didattica.
+
+## How the .html files are created
+I currently write the notes in .org files using Emacs org-mode. Every .html file is created by exporting the .org files into .html files; math symbols are created by MathJax.
