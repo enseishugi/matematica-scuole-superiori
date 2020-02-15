@@ -1,0 +1,157 @@
+# FILENAME: prodotti-notevoli.org
+# 
+
+#+BEGIN: insert-latex-macros :file "mathjax-macros-superiori.tex"
+#+LATEX_HEADER: \usepackage{cancel}
+#+LATEX_HEADER: \newcommand{\vv}   [1] {\overrightarrow{#1}} % Over-arrow for vectors notation
+#+LATEX_HEADER: \newcommand{\norm} [1] {\left|#1\right|} % Norm |x|
+#+LATEX_HEADER: \newcommand{\dist}[2]{\overline{{#1}{#2}}} % Distance between two points
+#+LATEX_HEADER: \newcommand{\NN}{\mathbb{N}} % Natural numbers
+#+LATEX_HEADER: \newcommand{\ZZ}{\mathbb{Z}} % Integers
+#+LATEX_HEADER: \newcommand{\QQ}{\mathbb{Q}} % Rational numbers
+#+LATEX_HEADER: \newcommand{\RR}{\mathbb{R}} % Real numbers
+#+LATEX_HEADER: \newcommand{\CC}{\mathbb{C}} % Complex numbers
+#+BEGIN_HTML
+\(
+\require{cancel}
+\newcommand{\vv}   [1] {\overrightarrow{#1}} % Over-arrow for vectors notation
+\newcommand{\norm} [1] {\left|#1\right|} % Norm |x|
+\newcommand{\dist}[2]{\overline{{#1}{#2}}} % Distance between two points
+\newcommand{\NN}{\mathbb{N}} % Natural numbers
+\newcommand{\ZZ}{\mathbb{Z}} % Integers
+\newcommand{\QQ}{\mathbb{Q}} % Rational numbers
+\newcommand{\RR}{\mathbb{R}} % Real numbers
+\newcommand{\CC}{\mathbb{C}} % Complex numbers
+\)
+#+END_HTML
+#+END
+
+* Somma per differenza
+Si chiama *somma per differenza* perché stiamo moltiplicando una somma (di due
+numeri) con la loro differenza. La formula è
+
+\[
+(a - b)(a + b) = a^2 - b^2
+\]
+
+infatti
+
+\begin{alignat*}{1}
+(a - b)(a + b) &= a^2 + ab - ba - b^2 \\
+               &= a^2 + ab - ab - b^2 \\
+               &= a^2 + \cancel{ab} - \cancel{ab} - b^2 \\
+               &= a^2 - b^2
+\end{alignat*}
+
+* Quadrato di binomio
+Si chiama *quadrato di binomio* perché stiamo facendo il quadrato della somma di
+due lettere (una somma di due lettere si chiama *binomio*). La formula è
+
+\[
+(a + b)^2 = a^2 + 2ab + b^2
+\]
+
+infatti
+
+\begin{alignat*}{1}
+(a + b)^2 &= (a + b)(a + b) \\
+          &= a^2 + ab + ba + b^2 \\
+          &= a^2 + ab + ab + b^2 \\
+          &= a^2 + 2ab + b^2
+\end{alignat*}
+
+* Quadrato di trinomio
+Si chiama *quadrato di trinomio* perché stiamo facendo il quadrato della somma di
+tre lettere (una somma di tre lettere si chiama *trinomio*). La formula è
+
+\[
+(a + b + c)^2 = a^2 + b^2 + c^2 + 2ab + 2bc + 2ac
+\]
+
+infatti
+
+\begin{alignat*}{1}
+(a + b + c)^2 &= (a + b + c)(a + b + c) \\
+              &= a^2 + ab + ac + ba + b^2 + bc + ca + cb + c^2 \\
+              &= a^2 + ab + ac + ab + b^2 + bc + ac + bc + c^2 \\
+              &= a^2 + b^2 + c^2 + 2ab + 2bc + 2ac
+\end{alignat*}
+
+* Cubo di binomio
+Si chiama "cubo di binomio" perché stiamo facendo il cubo della somma di due
+lettere. La formula è
+
+\[
+(a + b)^3 = a^3 + 3 a^2 b + 3 a b^2 + b^3
+\]
+
+infatti usando la formula per il quadrato di binomio otteniamo
+
+\begin{alignat*}{1}
+(a + b)^3 &= (a + b)^2(a + b) \\
+          &= (a^2 + 2ab + b^2)(a + b) \\
+          &= a^3 + a^2 b + 2aba + 2ab^2 + b^2 a + b^3 \\
+          &= a^3 + a^2 b + 2 a^2 b + 2 a b^2 + a b^2 + b^3 \\
+          &= a^3 + 3 a^2 b + 3 a b^2 + b^3
+\end{alignat*}
+
+* Somma tra cubi
+Si chiama *somma tra cubi* perché stiamo sommando due cubi (eh...). La formula è
+
+\[
+a^3 + b^3 = (a + b)(a^2 - ab + b^2)
+\]
+
+tuttavia per dimostrarla conviene fare i conti al contrario, cioè partiamo dal
+secondo membro (quello a destra) e vediamo che facendo i conti otteniamo il
+primo (quello a sinistra), infatti
+
+\begin{alignat*}{1}
+(a + b)(a^2 - ab + b^2) &= a^3 - a^2 b + a b^2 + b a^2 - bab + b^3 \\
+                        &= a^3 - a^2 b + a b^2 + a^2 b - a b^2 + b^3 \\
+                        &= a^3 - \cancel{a^2 b} + a b^2 + \cancel{a^2 b} - a b^2 + b^3 \\
+                        &= a^3 + \cancel{a b^2} - \cancel{a b^2} + b^3 \\
+                        &= a^3 + b^3
+\end{alignat*}
+
+* Differenza tra cubi
+Si chiama *differenza tra cubi* perché stiamo facendo la differenza di due cubi
+(era proprio necessario?). La formula è
+
+\[
+a^3 - b^3 = (a - b)(a^2 + ab + b^2)
+\]
+
+e per dimostrarla ci sono in effetti due modi. La prima è di verificare i
+calcoli come abbiamo fatto per la somma di due cubi, che sarebbe
+
+\begin{alignat*}{1}
+(a - b)(a^2 + ab + b^2) &= a^3 + a^2 b + a b^2 - b a^2 - bab - b^3 \\
+                        &= a^3 + a^2 b + a b^2 - a^2 b - a b^2 - b^3 \\
+                        &= a^3 + \cancel{a^2 b} + a b^2 - \cancel{a^2 b} - a b^2 - b^3 \\
+                        &= a^3 + \cancel{a b^2} - \cancel{a b^2} - b^3 \\
+                        &= a^3 - b^3
+\end{alignat*}
+
+Altrimenti possiamo sfruttare la formula della somma di cubi, considerando il
+caso non di $a$ e $b$, bensì di $a$ e $-b$, infatti da una parte sappiamo che
+vale
+
+\[
+a^3 + (-b)^3 = a^3 - b^3
+\]
+
+mentre dall'altra parte sappiamo che vale
+
+\begin{alignat*}{1}
+a^3 + (-b)^3 &= (a + (-b))(a^2 - a(-b) + (-b)^2) \\
+             &= (a - b)(a^2 + ab + b^2)
+\end{alignat*}
+
+quindi mettendo assieme entrambe alla fine otteniamo
+
+\[
+a^3 - b^3 = a^3 + (-b)^3 = (a - b)(a^3 + ab + b^2)
+\]
+
+che è proprio la formula della differenza di cubi.

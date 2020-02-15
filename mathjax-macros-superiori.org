@@ -1,0 +1,25 @@
+# FILENAME: mathjax-macros-superiori.org
+
+# Macro LaTeX per gli appunti di matematica del liceo, che verranno poi passati
+# a MathJax.
+
+(org-babel-tangle t "~/org/lavoro/matematica-superiori/mathjax-macros-superiori.tex" "latex")
+
+# >>> Blocco da inserire <<<
+#+BEGIN: insert-latex-macros :file "mathjax-macros-superior.tex"
+#+END
+
+#+begin_src latex
+\require{cancel}
+% \usepackage{cancel}
+
+\newcommand{\norm} [1] {\left|#1\right|} % Norm |x|
+\newcommand{\vv}   [1] {\overrightarrow{#1}} % Over-arrow for vectors notation
+\newcommand{\dist} [2] {\overline{{#1}{#2}}} % Distance between two points
+
+\newcommand{\NN}{\mathbb{N}} % Natural numbers
+\newcommand{\ZZ}{\mathbb{Z}} % Integers
+\newcommand{\QQ}{\mathbb{Q}} % Rational numbers
+\newcommand{\RR}{\mathbb{R}} % Real numbers
+\newcommand{\CC}{\mathbb{C}} % Complex numbers
+#+end_src

@@ -1,0 +1,445 @@
+# FILENAME: parabole.org
+# Appunti sulle parabole.
+
+#+BEGIN: insert-latex-macros :file "mathjax-macros-superiori.tex"
+#+LATEX_HEADER: \usepackage{cancel}
+#+LATEX_HEADER: \newcommand{\norm} [1] {\left|#1\right|} % Norm |x|
+#+LATEX_HEADER: \newcommand{\vv}   [1] {\overrightarrow{#1}} % Over-arrow for vectors notation
+#+LATEX_HEADER: \newcommand{\dist} [2] {\overline{{#1}{#2}}} % Distance between two points
+#+LATEX_HEADER: \newcommand{\NN}{\mathbb{N}} % Natural numbers
+#+LATEX_HEADER: \newcommand{\ZZ}{\mathbb{Z}} % Integers
+#+LATEX_HEADER: \newcommand{\QQ}{\mathbb{Q}} % Rational numbers
+#+LATEX_HEADER: \newcommand{\RR}{\mathbb{R}} % Real numbers
+#+LATEX_HEADER: \newcommand{\CC}{\mathbb{C}} % Complex numbers
+#+BEGIN_HTML
+\(
+\require{cancel}
+\newcommand{\norm} [1] {\left|#1\right|} % Norm |x|
+\newcommand{\vv}   [1] {\overrightarrow{#1}} % Over-arrow for vectors notation
+\newcommand{\dist} [2] {\overline{{#1}{#2}}} % Distance between two points
+\newcommand{\NN}{\mathbb{N}} % Natural numbers
+\newcommand{\ZZ}{\mathbb{Z}} % Integers
+\newcommand{\QQ}{\mathbb{Q}} % Rational numbers
+\newcommand{\RR}{\mathbb{R}} % Real numbers
+\newcommand{\CC}{\mathbb{C}} % Complex numbers
+\)
+#+END_HTML
+#+END
+
+* Cos'è una parabola? Definizione di parabola
+La parabola è una figura geometrica che ha origini sin dal periodo ellenico
+(Grecia antica) ed è definita partendo da due informazioni:
+
+- Una retta, detta *retta direttrice* (diciamo $d$ di equazione $ax + by + c = 0$)
+- Un punto, detto *fuoco* (diciamo $F = (x_F, y_F)$)
+
+Per un punto $P = (x,y)$ nel piano possiamo stabilire:
+
+1. La distanza dal punto $P$ al fuoco $F$, che conosciamo per la formula della
+   distanza tra due punti nel piano
+
+   \[
+   \dist{P}{F} = \sqrt{(x_F - x)^2 + (y_F - y)^2}
+   \]
+
+2. La distanza dal punto $P$ alla retta direttrice $d$, che conosciamo per la
+   formula della distanza tra un punto e una retta
+      
+   \[
+   \dist{P}{d} = \frac{\norm{a x + b y + c}}{\sqrt{a^2 + b^2}}
+   \]
+
+Una *parabola* di direttrice $r$ e fuoco $F$ è l'insieme dei punti $P = (x,y)$
+nel piano che hanno la stessa distanza da $F$ e da $r$, cioè per cui si ha
+l'uguaglianza tra le due distanze
+
+\[
+\sqrt{(x_F - x)^2 + (y_F - y)^2}
+= \frac{\norm{a x + b y + c}}{\sqrt{a^2 + b^2}}
+\]
+
+Se sei alle scuole superiori, non è il caso di spaventarsi, infatti ne vedrai
+sempre e solo un caso particolare molto più semplice: quello in cui la retta
+direttrice è parallela all'asse $x$, cioè è una retta verticale.
+
+* Equazione della parabola per direttrice parallela all'asse $x$
+Supponiamo che la retta direttrice $d$ sia parallela all'asse $x$, questo
+signfica che la sua equazione nella forma implicita ha il coefficiente $a = 0$,
+cioè è
+
+\[
+by + c = 0
+\]
+
+dove $b \neq 0$, e possiamo riscriverla in forma esplicita come
+
+\[
+y = - \frac{c}{b}
+\]
+
+che ha coefficiente angolare $m = 0$ e quota $q = -\frac{c}{b}$. In questo modo,
+la distanza da un punto $P = (x, y)$ alla direttrice $d$ è
+
+\[
+\dist{P}{d}
+= \frac{\norm{y - mx - q}}{\sqrt{1 + m^2}}
+= \norm{y - q}
+\] 
+
+Sotto queste nuove ipotesi, un punto $P = (x, y)$ appartiene alla parabola di
+fuoco $F = (x_F, y_F)$ e direttrice $d \colon y = - q$ precisamente quando vale
+l'uguaglianza seguente tra distanze
+
+\[
+\sqrt{(x_F - x)^2 + (y_F - y)^2}
+= \norm{y - q}
+\]
+
+Se eleviamo al quadrato entrambi i membri, l'equazione diventa
+
+\begin{alignat*}{1}
+(x_F - x)^2 + (y_F - y)^2                              &= (y - q)^2 \\
+x_F^2 - 2 x_F x + x^2 + y_F^2 - 2 y_F y + y^2          &= y^2 - 2 q y + q^2 \\
+x_F^2 - 2 x_F x + x^2 + y_F^2 - 2 y_F y + \cancel{y^2} &= \cancel{y^2} - 2 q y + q^2 \\
+x_F^2 - 2 x_F x + x^2 + y_F^2 - 2 y_F y                &= - 2 q y + q^2
+\end{alignat*}
+
+Portiamo ora a destra tutto ciò che non è moltiplicato a $y$, e a destra tutto
+ciò che invece è moltiplicato a $y$. In questo modo otteniamo
+
+\begin{alignat*}{1}
+x^2 - 2 x_F x + x_F^2 + y_F^2 - q^2                    &= 2 y_F y - 2 q y \\
+x^2 - 2 x_F x + x_F^2 + y_F^2 - q^2                    &= 2 (y_F - q) y
+\end{alignat*}
+
+Ora, dato che il fuoco $F$ non è nella direttrice $d$ (l'abbiamo richiesto
+noi!), la coordinata $y$ del fuoco non può essere $q$, quindi $y_F - q \neq 0$,
+così possiamo dividere ambo i membri per $2 (y_F - q)$ (che è $\neq 0$) e così
+ottenere
+
+\begin{alignat*}{1}
+\frac{1}{2 (y_F - q)}\, x^2 - \frac{2 x_F}{2 (y_F - q)}\, x + \frac{x_F^2 + y_F^2 - q^2}{2 (y_F - q)}                   &= \frac{2 (y_F - q)}{2 (y_F - q)} y \\
+\frac{1}{2 (y_F - q)}\, x^2 - \frac{\cancel{2} x_F}{\cancel{2} (y_F - q)}\, x + \frac{x_F^2 + y_F^2 - q^2}{2 (y_F - q)} &= \frac{\cancel{2 (y_F - q)}}{\cancel{2 (y_F - q)}} y \\
+\frac{1}{2 (y_F - q)}\, x^2 - \frac{x_F}{y_F - q}\, x + \frac{x_F^2 + y_F^2 - q^2}{2 (y_F - q)}                         &= y
+\end{alignat*}
+
+che possiamo riscrivere scambiando i due membri dell'equazione come
+
+\[
+y = \frac{1}{2 (y_F - q)}\, x^2 - \frac{x_F}{y_F - q}\, x + \frac{x_F^2 + y_F^2 - q^2}{2 (y_F - q)}
+\]
+
+Così scritta, la formula sembra un po' contorta, ma se decidiamo di chiamare
+
+\[
+\alpha \eqdef \frac{1}{2 (y_F - q)},
+\qquad
+\beta \eqdef - \frac{x_F}{y_F - q},
+\qquad
+\gamma \eqdef \frac{x_F^2 + y_F^2 - q^2}{2 (y_F - q)}
+\]
+
+possiamo riscrivere l'equazione nella forma molto più familiare
+
+\[
+y = \alpha x^2 + \beta x + \gamma
+\]
+
+dove, però, solitamente lettere usate non sono le greche $\alpha$ (alfa),
+$\beta$ (beta) e $\gamma$ (gamma), ma le latine $a$, $b$ e $c$. Ma questa è solo
+una scelta di nomi.
+
+* Equazione generica della parabola
+Dalla definizione della parabola come insieme dei punti $P = (x,y)$ distanti
+uguali dal fuoco e dalla direttrice è possibile ottenere un'equazione che metta
+in relazione le coordinate $x$ e $y$.
+
+Partiamo dall'equazione 
+
+\[
+\sqrt{(x_F - x)^2 + (y_F - y)^2}
+= \frac{\norm{a x + b y + c}}{\sqrt{a^2 + b^2}}
+\]
+
+ed eleviamo entrambi i membri alla seconda, in modo da eliminare le radici
+quadrate
+
+\[
+(x_F - x)^2 + (y_F - y)^2
+= \frac{(a x + b y + c)^2}{a^2 + b^2}
+\]
+
+A questo punto facciamo un po' di conti...
+
+  \begin{align*}
+    (x_F - x)^2 + (y_F - y)^2 
+    &= \frac{(a x + b y + c)^2}{a^2 + b^2} \\
+    x_F^2 - 2 x_F x + x^2 + y_F^2 - 2 y_F y + y^2
+    &= \frac{a^2 x^2 + b^2 y^2 + c^2 + 2 ab xy + 2 bc y + 2 ac x}{a^2 + b^2}
+  \end{align*}
+
+Se ci mettiamo nell'ipotesi che la direttrice sia orizzontale (cioè parallela
+all'asse $x$), allora la sua equazione si riduce alla forma molto più semplice
+
+\[
+r \colon by + c = 0
+\]
+
+cioè $a = 0$. Applicando questo fatto l'ultima uguaglianza diventa
+
+  \begin{align*}
+    x_F^2 - 2 x_F x + x^2 + y_F^2 - 2 y_F y + y^2
+    &= y^2 + \frac{c^2}{b^2} + \frac{2c}{b} y \\
+    x^2 - 2 x_F x + x_F^2 + y_F^2 - \frac{c^2}{b^2}
+    &= 2 \left(  y_F + \frac{c}{b} \right) y
+  \end{align*}
+
+Giunti a questi punto possiamo notare che per ipotesi il fuoco non sta nella
+direttrice, e avendo posto $a = 0$ ogni punto della direttrice è della forma
+$(x, - \frac{c}{b})$, dunque sicuramente la coordinata $y_F$ non è $-
+\frac{c}{b}$. In questo modo sappiamo che $y_F + \frac{c}{b} \neq 0$ e possiamo
+prenderne l'inverso moltiplicativo. Dunque, moltiplicando ambo i membri per
+l'inverso di $2 (y_F + \frac{c}{b})$ (e scambiando i due membri) alla fine
+otteniamo l'equazione
+
+\[
+y = \alpha x^2 + \beta x + \gamma
+\]
+
+dove le lettere $\alpha$, $\beta$ e $\gamma$ le abbiamo messe per semplificare
+l'esposizione; in realtà sono i valori (abbiamo fatto la semplificazione di $2$
+in $\beta$)
+
+\[
+\alpha = \frac{1}{2 (y_F + \frac{c}{b})},
+\qquad
+\beta = - \frac{x_F}{y_F + \frac{c}{b}},
+\qquad
+\gamma = \frac{x_F^2 + y_F^2 - \frac{c^2}{b^2}}{2 (y_F + \frac{c}{b})}
+\]
+
+* Vertice di una parabola
+Il *vertice* di una parabole è il punto della parabola che sta a "metà strada"
+tra il fuoco e la direttrice. Più precisamente, possiamo considerare la retta
+perpendicolare alla direttrice che passa per $F$ (questa retta si chiama
+*asse*). Questa retta interseca la direttrice in un punto $H$. Se quindi
+prendiamo il punto medio del segmento $FH$, questo deve per forza stare nella
+parabola dato che la sua distanza da $F$ e da $r$ coincide.
+
+Chiamiamo questo punto $V = (x_V, y_V)$, e supponiamo sempre di stare nel caso
+della direttrice parallela all'asse $x$. Geometricamente è intuitivo che il
+vertice debba avere la stessa coordinata $x$ del fuoco, cioè vale proprio $x_V =
+x_F$, quindi se riusciamo a trovare un'equazione per $x_F$ usando $\alpha$,
+$\beta$ o $\gamma$, sappiamo ritrovare la direttrice e il fuoco.
+
+Dalla relazione che lega le coordinate dei punti nella parabola di fuoco $F$ e
+direttrice $r$ possiamo la coordinata $x$ del fuoco, infatti si ha
+
+\[
+x_F = - \frac{\beta}{2 \alpha}
+\]
+
+Dato che il fuoco e il vertice hanno la stessa coordinata $x$, ciò signfica che
+vale anche $x_V = - \frac{\beta}{2 \alpha}$, e di conseguenza vale
+
+    \begin{align*}
+      y_V
+      &= \frac{\beta^2}{4 \alpha} - \frac{\beta^2}{2 \alpha} + \gamma \\
+      &= - \frac{\beta^2}{4 \alpha} + \gamma \\
+      &= \frac{- \beta^2 + 4 \alpha \gamma}{4 \alpha} \\
+      &= - \frac{\Delta}{4 \alpha}
+    \end{align*}
+ 
+dove $\Delta$ è proprio il discriminante dell'equazione di secondo grado $\alpha
+x^2 + \beta x + \gamma = 0$, cioè
+
+\[
+\Delta = \beta^2 - 4 \alpha \gamma.
+\]
+
+Alla fine di tutto, abbiamo mostrato che il vertice della parabola è il punto di
+coordinate
+
+  \[
+    V = \left( - \frac{\beta}{2 \alpha},\, - \frac{\Delta}{4 \alpha} \right)
+  \]
+
+Possiamo anche ricavare l'espressione delle coordinate del vertice in funzione
+di dei coefficienti della retta direttrice e del fuoco sostituendo $\alpha$,
+$\beta$ e $\gamma$ con le loro definizioni:
+
+  \[
+    x_V = x_F  
+  \]
+
+e
+
+  \begin{align*}
+    y_V
+    &= - \frac{x_F^2}{2 (y_F + \frac{c}{b})} + \frac{x_F^2 + y_F^2 - \frac{c^2}{b^2}}{2 (y_F + \frac{c}{b})} \\
+    &= \frac{y_F^2 - \frac{c^2}{b^2}}{2 (y_F + \frac{c}{b})} \\
+    &= \frac{y_F - \frac{c}{b}}{2}
+  \end{align*}
+
+Quindi possiamo scrivere il vertice anche come
+
+  \begin{align*}
+    V = \left( x_F,\, \frac{y_F - \frac{c}{b}}{2} \right)
+  \end{align*}
+
+* Formula del fuoco e della direttrice
+Sappiamo che valgono le identità
+
+\[
+\alpha = \frac{1}{2 (y_F + \frac{c}{b})},
+\qquad
+-\frac{\Delta}{4 \alpha} = \frac{y_F - \frac{b}{c}}{2}
+\]
+
+che possiamo riscrivere nel modo seguente
+
+  \begin{align*}
+    y_F + \frac{c}{b} = \frac{1}{2 \alpha}
+    \qquad
+    y_F - \frac{c}{b} = - \frac{\Delta}{2 \alpha}
+  \end{align*}
+
+Se alla prima equazione sommiamo la seconda, facendo un po' di calcoli alla fine
+ottemiamo l'identità
+
+\[
+y_F = \frac{1 - \Delta}{4 \alpha}
+\]
+
+Sapendo già che vale anche $x_F = - \frac{\beta}{2 \alpha}$, allora possiamo
+scrivere il fuoco della parabola come
+
+\[
+F = \left( - \frac{\beta}{2 \alpha},\, \frac{1 - \Delta}{4 \alpha} \right)
+\]
+
+Se invece alla seconda equazione sottraiamo la prima, facendo un po' di calcoli
+otteniamo l'identità
+
+\[
+-\frac{c}{b} = - \frac{1 + \Delta}{4 \alpha}
+\]
+
+quindi possiamo scrivere l'equazione della direttrice come
+
+\[
+y + \frac{1 + \Delta}{4 \alpha} = 0
+\]
+
+* Trovare una parabola dati tre punti
+
+* Trovare una parabole dato il fuoco e un punto
+
+* Trovare una parabola dato un vertice e un punto
+
+* Trovare la retta tangente una parabola in un punto della parabola
+Supponiamo di avere una parabola $\mathcal{P}$ di equazione $y^2 = a x^2 + b x +
+c$ e di avere un suo punto $P = (x_0, y_0)$. Ricordiamo che affinché il punto
+$P$ sia nella parabola, le sue coordinate devono soddisfare l'equazione
+
+\[
+y_0 = a x_0^2 + b x_0 + c
+\]
+
+Ora consideriamo il fascio di rette passanti per il punto $P$, che è dato
+dall'equazione parametrizzata
+
+\[
+y - y_0 = m (x - x_0)
+\]
+
+dove $m \in \RR$ è un numero reale, e al variare di $m$ abbiamo una retta
+diversa.
+
+Il nostro obiettivo è di trovare il parametro $m \in \RR$ corrispondente alla
+retta tangente alla parabola $\mathcal{P}$. Affinché una retta sia tangente alla
+parabola, devono interesecare soltanto in un punto, che deve proprio essere $P$.
+
+La nostra strategia è di considerare il sistema seguente
+
+\[
+\left\{ \begin{array}{lrc}
+        y_0     = a x_0^2 + b x_0 + c & \qquad \text{($P$ è nella parabola $\mathcal{P}$)}     & \text{(I)} \\
+        y       = a x^2 + b x + c     & \qquad \text{(Equazione della parabola $\mathcal{P}$)} & \text{(II)} \\
+        y - y_0 = m (x - x_0)         & \qquad \text{(Equazione della retta)}                  & \text{(III)} \\
+        \end{array}
+\right.
+\]
+
+che corrisponde all'intersezione della retta con la parabola, in cui stiamo
+anche affermando che il punto $P = (x_0, y_0)$ sia nella parabola. Le soluzioni
+del sistema sono punti $(x, y)$ che rendono vere la seconda e la terza
+equazione. Noi vogliamo che ci sia un'unica soluzione, cioè il punto $P = (x_0,
+y_0)$.
+
+Prima di tutto dimostreremo che $x = x_0$ è la coordinata $x$ di una soluzione
+per il sistema, indipendentemente dalla scelta di $m$, da cui dedurremo che il
+punto $P$ sia una soluzione. Ciò in realtà non dovrebbe stupirci perché sappiamo
+per ipotesi che il punto $P = (x_0, y_0)$ appartiene sia alla parabola che alla
+retta. Ciò che faremo noi, però, è di supporre che $x_0$ sia l'unica soluzione,
+e da questo riusciremo a determinare quale sia il coefficiente angolare $m$
+corrispondente alla retta tangente.
+
+Per prima cosa, se sottraiamo all'equazione (II) i termini dell'equazione (I),
+membro a membro, si ottiene
+
+\begin{alignat*}{2}
+y - y_0 & = a x^2 - a x_0^2 + b x - b x_0 + \cancel{c} - \cancel{c} && \\
+        & = a (x^2 - x_0^2) + b (x - x_0)                           && \\
+        & = a (x^2 - x_0^2) + b (x - x_0)                           && \\
+        & = a (x + x_0)(x - x_0) + b (x - x_0)                      & \qquad & \text{(Somma per differenza)}
+\end{alignat*}
+
+Possiamo ora notare come il primo membro nella prima riga compaia anche come
+primo membro nell'equazione (III), da cui otteniamo
+
+\[
+m (x - x_0)
+= y - y_0
+= a (x + x_0)(x - x_0) + b (x - x_0)
+\]
+
+cioè
+
+\[
+m (x - x_0)
+= a (x + x_0)(x - x_0) + b (x - x_0)
+\]
+
+Portando ora tutto a primo membro e raccogliendo $x - x_0$ otteniamo il prodotto
+seguente
+
+\[
+\underbrace{(x - x_0)}_{\text{Fattore 1}}
+\cdot \underbrace{(m - a(x + x_0) - b)}_{\text{Fattore 2}} = 0
+\]
+
+Affinché il prodotto dei due fattori sia nullo, uno dei due fattori deve essere
+nullo. Ricordiamoci che noi stiamo cercando $m \in \RR$ affinché questa
+equazione abbia soltanto una soluzione $x$. Dato che il primo fattore si annulla
+per $x = x_0$, sappiamo che $x_0$ è una soluzione dell'equazione. Dato che
+abbiamo richiesto l'unicità, ciò significa che anche il secondo fattore si deve
+annullare per $x = x_0$, il che significa
+
+\[
+m - a(x_0 + x_0) - b = 0
+\]
+
+e isolando $m$ si ottiene
+
+\[
+m = 2 a x_0 + b
+\]
+
+Quindi la retta tangente è proprio quella di equazione
+
+\[
+y - y_0 = (2 a x_0 + b) (x - x_0)
+\]
+
+* Trovare (se esistono) le rette tangenti una parabola passanti per un punto del piano non nella parabola

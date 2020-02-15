@@ -1,0 +1,84 @@
+# FILENAME: piano-cartesiano.org
+
+# Descrizione del piano cartesiano.
+
+* Cos'è il Piano Cartesiano?
+Consideriamo il piano Euclideo, lì possiamo disegnare punti, rette, figure
+geometriche, chi più ne ha, più ne metta. Facciamo finta per un momento di
+vivere dentro il piano Euclideo, se noi ci troviamo in un punto $P$, come
+facciamo a dire a uno che si trova in un punto $Q$ dove ci troviamo?
+
+Un modo per risolvere questo problema è creare un sistema di coordinate sul
+piano cartesiano. L'idea è di fissare un punto $O$ nel piano, e di considerare
+due rette perpendicolari tra loro passanti per $O$, come in figura
+
+[FIGURA DI RETTE PERPENDICOLARI]
+
+Noi per praticità disegnamo le rette in modo tale che una sia orizzontale e
+l'altra verticale, ma in realtà è una scelta del tutto arbitraria. Inoltre:
+
+1) Chiamiamo *asse x* la retta orizzontale (conosciuta anche come *asse delle
+   ascisse*).
+
+2) Chiamiamo *asse y* la retta verticale (conosciuta anche come *asse delle
+   ordinate*).
+
+Ora se consideriamo un punto $P$ qualsiasi nel piano, possiamo sfruttare i due
+assi nel modo seguente:
+
+1) Consideriamo la retta parallela all'asse $x$ passante per $P$, questa
+   interseca l'asse $y$ in un punto $P_y$.
+
+2) Consideriamo la retta parallela all'asse $y$ passante per $P$, questa
+   interseca l'asse $x$ in un punto $P_x$.
+
+[FIGURA DEL PUNTO CON LE RETTE PARALLELE]
+
+Possiamo usare i due nuovi punti $P_x$ e $P_y$ per localizzare il punto $P$ nel
+piano, ma non è che da soli ci dicano granché... E qui arriva l'idea geniale!
+Abbiamo le due lunghezze $\dist{O}{P_x}$ e $\dist{O}{P_y}$, possiamo usarle per
+identificare in modo unico i punti $P_x$ e $P_y$!
+
+[FIGURA CHE MOSTRA LE LUNGHEZZE DEI SEGMENTI DELLE PROIEZIONI]
+
+C'è un problema in tutto questo, tuttavia... Affinché le lunghezze abbiano
+senso, occorre prima stabilire un'unità di misura! Ma questo è un problema
+facilmente risolvibile: decidiamo (arbitrariamente) le dimensioni di un segmento
+di lunghezza $1$ e spezzettiamo entrambi gli assi $x$ e $y$ in segmenti di
+lunghezza $1$. In questo modo i nostri assi sono come dei righelli infinitamente
+lunghi.
+
+[FIGURA CHE MOSTRA IMPLEMENTARE L'UNITÀ DI MISURA NEGLI ASSI]
+
+Però come facciamo a distinguere se i punti siano sopra/sotto e a
+destra/sinistra di $O$?
+
+Nessun problema, risolviamo anche questo. Per convenzione diciamo che:
+
+1) Se un punto $P_x$ è a destra di $O$, allora la lunghezza $\dist{O}{P_x}$ la
+   consideriamo positiva. Mentre se $P_x$ è a sinistra di $O$, allora alla
+   lunghezza $\dist{O}{P_x}$ mettiamo il segno $-$ davanti.
+
+2) Se un punto $P_y$ è sopra di $O$, allora la lunghezza $\dist{O}{P_y}$ la
+   consideriamo positiva. Mentre se $P_y$ è sotto di $O$, allora alla lunghezza
+   $\dist{O}{P_y}$ mettiamo il segno $-$ davanti.
+
+In questo modo tutti i punti $P_x$ sull'asse $x$ corrispondono a un numero
+reale, che se lo prendiamo in valore assoluto indica la lunghezza del segmento
+$\dist{O}{P_x}$. Lo stesso discorso vale per i punti $P_y$ sull'asse $y$. Quindi
+prendere una coppia di punti sugli assi $x$ e $y$ corrisponde a prendere una
+coppia di numeri reali.
+
+[INTRODURRE LA NOTAZIONE E INFILARCI UN'IMMAGINE
+
+$P_x$ è il punto $(x_P, 0)$
+$P_y$ è il punto $(0, y_P)$
+
+$P_x$ è la proiezione di $P$ sull'asse $x$
+$P_y$ è la proiezione di $P$ sull'asse $y$
+
+$x_P$ è la coordinata $x$ del punto $P$
+$y_P$ è la coordinata $y$ del punto $P$]
+
+* Esempi
+[INSERISCI DEGLI ESEMPI CON DISEGNI]
